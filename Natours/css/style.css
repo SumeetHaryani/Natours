@@ -32,6 +32,42 @@ body {
   background-size: cover;
   background-position: top;
   /* image adjustment all from bottom */
-  clip-path: polygon(0 0,100% 0, 100% 75vh,0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* clclwise  clip the image  */
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px; /*ref is parent elem ie header */
+  left: 40px;
+}
+.logo {
+  /* we specift the height and width scales accordingly */
+  height: 35px;
+}
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* 50% of the width of parent elem ie header when transform not used*/
+  transform: translate(-50%, -50%); /*makes elem exactly at center */
+  /* now these 50% are mo longer in realion ship of parent elem
+  but of th elem itslef */
+}
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.5px;
 }
