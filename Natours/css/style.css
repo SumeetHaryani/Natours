@@ -58,11 +58,13 @@ body {
   transform: translate(-50%, -50%); /*makes elem exactly at center */
   /* now these 50% are mo longer in realion ship of parent elem
   but of th elem itslef */
+  text-align: center;
 }
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden; /*to reomve shakiness when using animation */
+  margin-bottom: 60px;
 }
 .heading-primary-main {
   display: block;
@@ -111,4 +113,69 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+@keyframes moveInBottom {
+  /* animation at 0% */
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+ 
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block; /*used when we want to give padding,h,wid  */
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+  /* put high no */
+  transition: all 0.2s;
+
+  position: relative;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /*ofset in x dir and y dir 20px blur*/
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+/* extra btn animation use after to add element behind the btn*/
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+.btn:hover::after {
+  /* inc size of btn */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated{
+    animation: moveInBottom 1s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    
 }
