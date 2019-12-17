@@ -45,12 +45,12 @@ body {
   position: relative;
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem; /*ref is parent elem ie header */
   left: 4rem;
 }
-.logo {
+.header__logo {
   /* we specift the height and width scales accordingly */
   height: 3.5rem;
 }
@@ -58,7 +58,7 @@ body {
     animation to happen when hover
     animation: moveInRight 1s ease-in-out;
 } */
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -74,7 +74,7 @@ body {
   backface-visibility: hidden; /*to reomve shakiness when using animation */
   margin-bottom: 6rem;
 }
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -85,7 +85,7 @@ body {
   /* animation-iteration-count: 3; animation 3 times */
   /* animation-delay: 3s; /*3s delay to start animation */
 }
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -157,7 +157,7 @@ body {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -174,7 +174,7 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-.btn-white::after {
+.btn--white::after {
   background-color: #fff;
 }
 .btn:hover::after {
@@ -183,7 +183,7 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 1s ease-out 0.75s;
   animation-fill-mode: backwards;
 }
