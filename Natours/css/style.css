@@ -1,4 +1,3 @@
-/* reset */
 *,
 *::after,
 *::before {
@@ -12,71 +11,6 @@ html {
   font-size: 62.5%; }
 
 /* universal font since body is parent of all elem it gets nherited*/
-body {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem; }
-
-.header {
-  /* 95% of visible window */
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  /* image adjustment all from bottom */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* clclwise  clip the image  */
-  position: relative; }
-  .headerheader__logo-box {
-    position: absolute;
-    top: 4rem;
-    /*ref is parent elem ie header */
-    left: 4rem; }
-  .header__logo {
-    /* we specift the height and width scales accordingly */
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* 50% of the width of parent elem ie header when transform not used*/
-    transform: translate(-50%, -50%);
-    /*makes elem exactly at center */
-    /* now these 50% are mo longer in realion ship of parent elem
-    but of th elem itslef */
-    text-align: center; }
-
-/* .logo:hover{
-    animation to happen when hover
-    animation: moveInRight 1s ease-in-out;
-} */
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /*to reomve shakiness when using animation */
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* speed of animation */
-    /* animation-iteration-count: 3; animation 3 times */
-    /* animation-delay: 3s; /*3s delay to start animation */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
-
 /* decalre animation moveInLdeft */
 @keyframes moveInLeft {
   /* animation at 0% */
@@ -108,6 +42,38 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*to reomve shakiness when using animation */
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* speed of animation */
+    /* animation-iteration-count: 3; animation 3 times */
+    /* animation-delay: 3s; /*3s delay to start animation */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
 .btn {
   /* extra btn animation use after to add element behind the btn*/ }
@@ -152,3 +118,32 @@ body {
   .btn--animated {
     animation: moveInBottom 1s ease-out 0.75s;
     animation-fill-mode: backwards; }
+
+.header {
+  /* 95% of visible window */
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  /* image adjustment all from bottom */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clclwise  clip the image  */
+  position: relative; }
+  .headerheader__logo-box {
+    position: absolute;
+    top: 4rem;
+    /*ref is parent elem ie header */
+    left: 4rem; }
+  .header__logo {
+    /* we specift the height and width scales accordingly */
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* 50% of the width of parent elem ie header when transform not used*/
+    transform: translate(-50%, -50%);
+    /*makes elem exactly at center */
+    /* now these 50% are mo longer in realion ship of parent elem
+    but of th elem itslef */
+    text-align: center; }

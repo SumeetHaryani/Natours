@@ -1,0 +1,13 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* setting root font size */
+html {
+  /* 100% is 16px so for 10px we use 62.5 */
+  font-size: 62.5%;
+}
+/* universal font since body is parent of all elem it gets nherited*/

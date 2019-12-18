@@ -1,0 +1,55 @@
+.btn {
+  &:link,
+  &:visited {
+    display: inline-block; /*used when we want to give padding,h,wid  */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 100px;
+    /* put high no */
+    transition: all 0.2s;
+    font-size: 1.6rem;
+
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2); /*ofset in x dir and y dir 20px blur*/
+  }
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  /* extra btn animation use after to add element behind the btn*/
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  &:hover::after {
+    /* inc size of btn */
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  &--animated {
+    animation: moveInBottom 1s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
