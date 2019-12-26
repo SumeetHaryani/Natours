@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width; //if this much width is not there then it will fill 100%space it has
-  background-color: #fff;
   margin: 0 auto; //trick to center block element inside another block element
 
   &:not(:last-child) {
@@ -11,7 +10,7 @@
   //all classs starting with col-
   [class^='col-'] {
     float: left;
-    background-color: orangered;
+    //   background-color: orangered;
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
