@@ -29,6 +29,15 @@
       background-color: $color-white;
     }
   }
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
   /* extra btn animation use after to add element behind the btn*/
   &::after {
     content: '';
