@@ -6,7 +6,38 @@
   left: 0;
   background-color: rgba($color-black, 0.8);
   z-index: 3000;
+  transition: all 0.3s;
+  //hiding popup
+  opacity: 0;
+  visibility: hidden;
+  //when btnisclicked #popup becoems target  but since thisone has id of popup,so target is this entire element
+  //andthen we selct the elemnt using psuedo class target
+  //whern target is popup whenin url is /#popup
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
 
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark-3;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 3rem;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  //style the child elemnt of popup elemnt
+  &:target &__content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
   &__content {
     width: 75%;
     background-color: $color-white;
@@ -14,9 +45,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.25);
     border-radius: 3px;
     display: table;
+    opacity: 0;
+    transition: all 0.5s 0.2s;
   }
 
   &__left {
