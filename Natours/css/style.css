@@ -1,3 +1,17 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
 *,
 *::after,
 *::before {
@@ -7,8 +21,16 @@
 
 /* setting root font size */
 html {
-  /* 100% is 16px so for 10px we use 62.5  den for 1rem =10px */
   font-size: 62.5%; }
+  @media (min-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 /* universal font since body is parent of all elem it gets nherited*/
 /* decalre animation moveInLdeft */
@@ -525,7 +547,7 @@ body {
   .row:not(:last-child) {
     margin-bottom: 8rem; }
   .row::after {
-    content: "";
+    content: '';
     display: table;
     clear: both; }
   .row [class^='col-'] {
