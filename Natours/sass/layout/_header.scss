@@ -15,7 +15,12 @@
   /* clclwise  clip the image  */
   position: relative;
 
-  &header__logo-box {
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  &__logo-box {
     position: absolute;
     top: 4rem; /*ref is parent elem ie header */
     left: 4rem;

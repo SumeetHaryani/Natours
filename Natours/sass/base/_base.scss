@@ -17,9 +17,18 @@ html {
     @include respond(tab-port) { // width < 900?
         font-size: 50%; //1 rem = 8px, 8/16 = 50%
     }
-    
+    //this uses min-width
     @include respond(big-desktop) {
         font-size: 75%; //1rem = 12, 12/16
     }
 }
 /* universal font since body is parent of all elem it gets nherited*/
+
+body{
+box-sizing: border-box;
+  padding: 2rem;
+  @include respond(tab-port){
+    padding: 0;
+  }
+
+}
